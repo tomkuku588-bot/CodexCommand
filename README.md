@@ -9,7 +9,6 @@
 - `user-agreement.html`：用户协议，包含中文和英文版本
 - `permission-rationale.md`：权限说明
 - `assets/legal.css`：静态页面样式
-- `.github/workflows/pages.yml`：GitHub Pages 自动部署工作流
 
 ## 部署地址
 
@@ -29,7 +28,20 @@ git@github.com:tomkuku588-bot/CodexCommand.git
 
 ## 部署方式
 
-推送到 `main` 分支后，GitHub Actions 会把根目录中的静态页面发布到 GitHub Pages。若仓库首次使用 Pages，请在 GitHub 仓库的 Settings - Pages 中确认发布源为 GitHub Actions。
+当前部署采用 `gh-pages` 分支根目录发布静态文件。更新页面后执行：
+
+```bash
+git push origin main
+git push origin main:gh-pages
+```
+
+若 Pages 首次访问仍为 404，请在 GitHub 仓库 Settings - Pages 中选择：
+
+```text
+Source: Deploy from a branch
+Branch: gh-pages
+Folder: / (root)
+```
 
 ## 上架前复核
 
